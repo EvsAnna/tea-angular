@@ -1,0 +1,97 @@
+<section class="order py-4 ">
+  <div class="container d-flex flex-column align-items-center ">
+    <h2 class="text-center mb-5" *ngIf="showForm">Сделать заказ</h2>
+    <form class="col-lg-6 mx-auto d-flex flex-column justify-content-center justify-content-md-start"
+          *ngIf="showForm"
+          [formGroup]="orderInputs">
+      <div class="row g-3">
+        <div class="col-lg-4 col-8 mx-auto">
+          <label for="firstName" class="form-label">Имя</label>
+          <input type="text" class="form-control form-input form-input" name="firstName"
+                 id="firstName" formControlName="firstName" (keydown)="onlyLetters($event)">
+          <div class="error-input text-danger"
+               *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">Введите имя
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-8 mx-auto">
+          <label for="lastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control form-input" name="lastName"
+                 id="lastName" formControlName="lastName" (keydown)="onlyLetters($event)">
+          <div class="error-input text-danger"
+               *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">Введите фамилию
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-8 mx-auto">
+          <label for="phone" class="form-label">Телефон</label>
+          <input type="text" class="form-control form-input" name="phone" id="phone"
+                 formControlName="userPhone" #userPhoneEl (keydown)="phoneValidator($event,userPhoneEl)">
+          <div *ngIf="userPhone?.invalid && (userPhone?.dirty || userPhone?.touched)">
+            <div class="error-input text-danger"
+                 *ngIf="userPhone?.errors?.['required']">Введите номер телефона
+            </div>
+            <div class="error-input text-danger"
+                 *ngIf="userPhone?.errors?.['length']">Номер телефона должен содержать 11 цифр (без учета '+')
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-8 mx-auto">
+          <label for="country" class="form-label">Страна</label>
+          <input type="text" class="form-control form-input" name="country" id="country"
+                 formControlName="country">
+          <div class="error-input text-danger"
+               *ngIf="country?.invalid && (country?.dirty || country?.touched)">Введите вашу страну
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-8 mx-auto">
+          <label for="index" class="form-label">Индекс</label>
+          <input type="text" class="form-control form-input" name="index" id="index" formControlName="index"
+                 (keydown)="indexValidator($event, indexEl)" #indexEl>
+          <div *ngIf="index?.invalid && (index?.dirty || index?.touched)">
+            <div class="error-input text-danger" *ngIf="index?.errors?.['required']">
+              Введите ваш индекс
+            </div>
+            <div class="error-input text-danger" *ngIf="index?.errors?.['length']">
+              Индекс должен содержать 6 символов
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-8 mx-auto">
+          <label for="address" class="form-label">Адрес</label>
+          <input type="text" class="form-control form-input" name="address" id="address"
+                 formControlName="address" (keydown)="addressValidator($event)">
+          <div class="error-input text-danger"
+               *ngIf="address?.invalid && (address?.dirty || address?.touched)">Введите ваш адрес
+          </div>
+        </div>
+        <div class="col-lg-6 col-8 mx-auto">
+          <label for="country" class="form-label">Товар</label>
+          <input type="text" class="form-control form-input" name="product" id="product"
+                 formControlName="product" readonly>
+        </div>
+
+        <div class="col-lg-6 col-8 mx-auto">
+          <label for="index" class="form-label">Комментарий к заказу</label>
+          <input type="text" class="form-control form-input" name="comment" id="comment"
+                 formControlName="comment">
+        </div>
+
+      </div>
+      <div class="mt-4 d-flex flex-sm-row flex-column justify-content-start align-items-center">
+        <button type="button" (click)="formValidators()" [disabled]="btnDisabled"
+                class="btn btn-primary form-btn px-4 mb-sm-0 mb-3">
+          Отправить
+        </button>
+        <span class="px-4 col-xs-3 text-danger"
+              *ngIf="orderError">Произошла ошибка. Попробуйте еще раз.</span>
+      </div>
+    </form>
+    <div class="thanks d-flex align-items-center justify-content-center " *ngIf="!showForm">
+    <h2 class="h1 text-primary" *ngIf="!showForm">Спасибо за заказ!</h2>
+    </div>
+  </div>
+</section>

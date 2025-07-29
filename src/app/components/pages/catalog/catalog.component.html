@@ -1,0 +1,23 @@
+<section class="py-4">
+  <div class="container">
+    <h1 class="text-center mb-5 wow bounceIn">Наши чайные коллекции</h1>
+    <div class="products mx-auto d-flex row gap-4 justify-content-around px-4 px-sm-0">
+
+      <div class="card col-lg-4 col-md-6 col-12 p-0 wow fadeIn" *ngFor="let product of products">
+        <div class="card-image d-flex align-items-center justify-content-center">
+          <img src="{{product.image}}" alt="Чай {{product.title}}" class="card-img">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description | quickDescription }}</p>
+          <button class="btn btn-primary px-5 hvr-grow-shadow" (click)="openProduct(product.id)">Подробнее
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="loader-bg" *ngIf="loader">
+  <div class="loader"></div>
+</div>

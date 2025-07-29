@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "tea_angular": {
+      "i18n": {  "sourceLocale": "ru-RU"},
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -28,9 +29,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/jquery-ui/dist/themes/base/jquery-ui.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/dist/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {
