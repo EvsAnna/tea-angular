@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {Observable, Subject, Subscription} from "rxjs";
 import {OpenPopupInMainPagesService} from "../../../services/open-popup-in-main-pages.service";
 
-declare var $: any;
+// declare var $: any;
 
 @Component({
   selector: 'app-main',
@@ -29,14 +29,7 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    $("#accordion").accordion({
-      collapsible: true,
-      heightStyle: "content",
-    });
 
-    if (this.openPopup) {
-
-    }
   }
 
   ngOnDestroy() {

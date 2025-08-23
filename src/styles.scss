@@ -1,19 +1,34 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
 body{
   min-height: 100vh;
 }
 
-.ui-accordion-header-icon.ui-icon, .ui-widget-content .ui-icon, .ui-state-hover .ui-icon {
-  background: url("assets/close.png");
-  position: absolute;
-  right: 25px;
-  height: 20px;
-  width: 20px;
+.accordion-button {
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%) !important;
+  border-radius: 10px;
+  position: relative;
+}
+.accordion-header {
+  margin-bottom: 20px;
 }
 
-.ui-state-active .ui-icon, .ui-button:active .ui-icon {
-  background: url("assets/open.png");
+.accordion-button::after, .accordion-button:not(.collapsed)::after {
+  background-image: url('assets/close.png');
 }
 
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+.accordion-body{
+  padding-top: 0px;
+}
+
+.accordion-item{
+  border: none;
+}
 
 .loader-bg {
   position: fixed;
@@ -78,5 +93,7 @@ body{
   0% { transform: rotate(0deg) }
   100% { transform: rotate(360deg) }
 }
+
+
 
 

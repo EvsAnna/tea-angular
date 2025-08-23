@@ -5,67 +5,69 @@
     <div
       class="d-flex flex-column align-items-start position-absolute top-0 h-100 justify-content-center px-sm-5 px-1 mx-4">
       <div class="py-sm-5 px-1 ms-md-5 col-sm-8 col-10">
-        <h2 class="mb-0 fw-bold pb-sm-4 pb-1 mb-lg-5 mx-2 mb-sm-2 mb-3 lh-1 title-banner h1">Попробуй нашу новинку — ягодный чай</h2>
+        <h2 class="mb-0 fw-bold pb-sm-4 pb-1 mb-lg-5 mx-2 mb-sm-2 mb-3 lh-1 title-banner h1">Попробуй нашу
+          новинку — ягодный чай</h2>
         <button class="btn btn-primary px-2 px-md-4" (click)="openCatalog()">Смотреть</button>
       </div>
     </div>
   </div>
 </section>
 
-
 <!--accordion-->
 <section class="py-5">
-  <div class="container col-lg-8">
+  <div class="container ">
     <h2 class="text-center mb-5" id="title">
       Ответы на часто задаваемые вопросы
     </h2>
-    <div id="accordion" class="ui-accordion col-lg-8 mx-auto">
-      <h3 class="ui-accordion-header ui-accordion-header-active text-light  fw-bold p-3">
-        <div class="pe-5">Собираете ли вы подарочные боксы?</div>
-      </h3>
-      <div class="ui-accordion-content border-0 align-items-center">
-        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
-        стоимость!
-      </div>
-
-      <h3 class="ui-accordion-header ui-accordion-header-active bg-primary text-light  fw-bold p-3 ">
-        <div class="pe-5">Сколько у вас разновидностей чая?</div>
-      </h3>
-      <div class="ui-accordion-content border-0 align-items-center">
-        У нас в наличии постоянно имеется <span class="text-primary">шесть</span>
-        разновидностей потрясающего по вкусу чая! Кроме того, в зависимости от времени годы,
-        мы <span class="text-primary">добавляем сезонные чаи</span>
-      </div>
-
-      <h3 class="ui-accordion-header ui-accordion-header-active bg-primary text-light  fw-bold p-3 ">
-        <div class="pe-5">В какой срок осуществляется доставка?</div>
-      </h3>
-      <div class="ui-accordion-content border-0 align-items-center">
-        Мы стараемся доставить ваш заказ как можно скорее. Обычно срок не превышает 5 дней
-        для самых удаленных регионов России.
-      </div>
-
-      <h3 class="ui-accordion-header ui-accordion-header-active bg-primary text-light  fw-bold p-3 ">
-        <div class="pe-5">У вас обновляется ассортимент?</div>
-      </h3>
-      <div class="ui-accordion-content border-0 align-items-center">
-        Основные позиции нашего ассортимента чая являются постоянными. Однако мы стараемся
-        добавлять для вас вкуснейшие <span class="text-primary">сезонные чаи</span>
-      </div>
-
-      <h3 class="ui-accordion-header ui-accordion-header-active bg-primary text-light  fw-bold p-3 ">
-        <div class="pe-5">Какого объема у вас пачки чая?</div>
-      </h3>
-      <div class="ui-accordion-content border-0 align-items-center">
-        Объем пачки чая составляет 300гр
-      </div>
+    <div class="col-lg-8 mx-auto">
+      <ngb-accordion #acc="ngbAccordion" activeIds="open-in-started">
+        <ngb-panel id="open-in-started" class="mb-5">
+          <ng-template ngbPanelTitle>
+            <span class="text-light fw-bold">Собираете ли вы подарочные боксы?</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-light fw-bold">Сколько у вас разновидностей чая?</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            У нас в наличии постоянно имеется <span class="text-primary">шесть</span>
+            разновидностей потрясающего по вкусу чая! Кроме того, в зависимости от времени годы,
+            мы <span class="text-primary">добавляем сезонные чаи</span>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-light fw-bold">В какой срок осуществляется доставка?</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Мы стараемся доставить ваш заказ как можно скорее. Обычно срок не превышает 5 дней для самых
+            удаленных регионов России.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-light fw-bold">У вас обновляется ассортимент?</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            У Основные позиции нашего ассортимента чая являются постоянными. Однако мы стараемся
+            добавлять для вас вкуснейшие <span class="text-primary">сезонные чаи</span>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
     </div>
+
   </div>
 </section>
 
+
 <!--popup-->
-<section class="position-fixed top-0 start-0 w-100 h-100 popup-bg d-flex align-items-center justify-content-center ps-2 pe-2"
-*ngIf="openPopup" (click)="closePopup($event)">
+<section
+  class="position-fixed top-0 start-0 w-100 h-100 popup-bg d-flex align-items-center justify-content-center ps-2 pe-2 z-3"
+  *ngIf="openPopup" (click)="closePopup($event)">
   <div class="popup d-flex flex-column align-items-center justify-content-center p-5 position-relative">
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup-close">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -76,6 +78,8 @@
       </g>
     </svg>
     <h2 class="mb-md-5 mb-3 fs-md-1 fs-sm-2 fs-xs-3 fs-5">Посмотрите наши чайные коллекции</h2>
-    <button class="btn btn-primary px-2 px-md-4 fs-md-2 fs-sm-4 fs-xs-5 fs-6" (click)="openCatalog()">Смотреть</button>
+    <button class="btn btn-primary px-2 px-md-4 fs-md-2 fs-sm-4 fs-xs-5 fs-6" (click)="openCatalog()">
+      Смотреть
+    </button>
   </div>
 </section>
