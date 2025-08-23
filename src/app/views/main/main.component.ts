@@ -1,9 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Router} from "@angular/router";
-import {Observable, Subject, Subscription} from "rxjs";
-import {OpenPopupInMainPagesService} from "../../../services/open-popup-in-main-pages.service";
+import {Observable, Subscription} from "rxjs";
+import {OpenPopupInMainPagesService} from "../../shared/services/open-popup-in-main-pages.service";
 
-// declare var $: any;
 
 @Component({
   selector: 'app-main',
@@ -11,7 +10,7 @@ import {OpenPopupInMainPagesService} from "../../../services/open-popup-in-main-
   styleUrls: ['./main.component.scss']
 })
 
-export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnDestroy {
   openPopup: boolean = false;
   popupEvent: Subscription;
 
@@ -26,10 +25,6 @@ export class MainComponent implements OnInit, OnDestroy {
       }
     })
       .subscribe();
-  }
-
-  ngOnInit(): void {
-
   }
 
   ngOnDestroy() {

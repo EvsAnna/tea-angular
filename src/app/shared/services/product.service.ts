@@ -1,20 +1,23 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ProductType} from "../../types/product.type";
+import {ProductType} from "../../../types/product.type";
+import {environment} from "../../../environments/environment";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
 
   constructor(private http: HttpClient) {
   }
 
   getProducts(): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>('https://testologia.ru/tea')
+    return this.http.get<ProductType[]>(environment.apiURL + '/tea')
   }
 
   getProduct(id:number): Observable<ProductType> {
-    return this.http.get<ProductType>('https://testologia.ru/tea?id='+id)
+    return this.http.get<ProductType>(environment.apiURL + '/tea?id='+id)
   }
 
 

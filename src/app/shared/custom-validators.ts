@@ -10,6 +10,4 @@ export class CustomValidators {
         const result: boolean = control.value.length === 6 || control.value.length === 0;
         return result ? null : {length: {value: control.value}};
     }
-
-
 }

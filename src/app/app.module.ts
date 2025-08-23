@@ -3,37 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './components/pages/main/main.component';
-import { HeaderComponent } from './components/common/header/header.component';
-import { FooterComponent } from './components/common/footer/footer.component';
-import { CatalogComponent } from './components/pages/catalog/catalog.component';
-import { ProductComponent } from './components/pages/product/product.component';
-import { OrderComponent } from './components/pages/order/order.component';
-import {ProductService} from "./services/product.service";
 import { HttpClientModule} from "@angular/common/http";
-import { QuickDescriptionPipe } from './pipe/quick-description.pipe';
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ProductsModule} from "./views/products/products.module";
+import {MainModule} from "./views/main/main.module";
+import {OrderModule} from "./views/order/order.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    HeaderComponent,
-    FooterComponent,
-    CatalogComponent,
-    ProductComponent,
-    OrderComponent,
-    QuickDescriptionPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbAccordionModule
+    SharedModule,
   ],
-  providers: [ProductService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

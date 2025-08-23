@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
-import {OrderService} from "../../../services/order.service";
-import {OrderType} from "../../../../types/order.type";
 import {Subscription} from "rxjs";
-import {CustomValidators} from "../../../common/custom-validators";
+import {OrderService} from "../../shared/services/order.service";
+import {CustomValidators} from "../../shared/custom-validators";
+import {OrderType} from "../../../types/order.type";
 
 @Component({
   selector: 'order',
@@ -19,7 +19,6 @@ export class OrderComponent implements OnInit, OnDestroy {
   btnDisabled = false;
 
   private orderCrate$: Subscription | null = null;
-
 
   constructor(private activatedRoute: ActivatedRoute,
               private fb: FormBuilder,

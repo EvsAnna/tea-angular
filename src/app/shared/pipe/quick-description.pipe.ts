@@ -12,5 +12,4 @@ export class QuickDescriptionPipe implements PipeTransform {
     return description.slice(0, 85) + '...';
     }
   }
-
 }

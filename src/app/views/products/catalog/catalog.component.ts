@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductType} from "../../../../types/product.type";
 import {Subscription} from "rxjs";
-import {ProductService} from "../../../services/product.service";
 import {Router} from "@angular/router";
+import {ProductService} from "../../../shared/services/product.service";
 
 @Component({
   selector: 'app-catalog',
