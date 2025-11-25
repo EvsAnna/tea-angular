@@ -1,27 +1,37 @@
-# TeaAngular
+# Чайный магазин 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Этот проект разработан [Angular CLI](https://github.com/angular/angular-cli) версии 14.2.13.
 
-## Development server
+## О проекте
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Данный проект является учебным и демонстрирует навыки разработки фронтенд-приложений на Angular. Информация о товарах и их наличии получается путем асинхронных запросов к предварительно подготовленному и предоставленному серверному API.
 
-## Code scaffolding
+### Ключевые особенности:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **Angular 14:** Приложение полностью построено версии Angular 14, используя возможности фреймворка.
+*   **Bootstrap:** Использован для стилизации элементов интерфейса, обеспечивая адаптивность и эстетичный внешний вид на различных устройствах.
+*   **Backend Integration:** Данные загружаются с помощью HTTP-запросов к готовому серверному API, имитируя взаимодействие с реальным бэкендом.
+*   **Lazy Loading:** Реализована ленивая загрузка страниц (роутинг), что повышает производительность приложения за счет загрузки только необходимых компонентов при навигации.
+*   **Reactive Forms:** Форма заказа разработана с использованием реактивного подхода Angular, обеспечивая динамическую валидацию по условиям технического задания.
+*   **Server Response Handling:** Осуществлена корректная обработка ответов от сервера, включая как успешные операции, так и возможные ошибки.
 
-## Build
+## Как запустить:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Клонируйте репозиторий: git clone https://github.com/EvsAnna/tea-angular.git
+* Убедитесь, что у вас установлен Node.js
+* Установите зависимости: `npm install`
+* Запустите Сервер разработки `ng serve`
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Сервер разработки
 
-## Running end-to-end tests
+Запустите `ng serve` для сервера разработки. Перейдите по адресу `http://localhost:4200/`. Приложение автоматически перезагрузится при изменении любого исходного файла.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Сборка
 
-## Further help
+Запустите `ng build` для сборки проекта. Артефакты сборки будут сохранены в каталоге `dist/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Дополнительная помощь
+
+Чтобы получить дополнительную справку по Angular CLI, используйте `ng help` или посетите страницу [Обзор и справочник команд Angular CLI] (https://angular.io/cli).
+
